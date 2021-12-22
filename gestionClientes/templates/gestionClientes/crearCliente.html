@@ -1,7 +1,7 @@
 {% extends "gestionClientes/base.html" %}
 {% block title %} Crear Cliente {% endblock %}
 {% block content %}
-<div>
+<div class="margentpl">
     <h2>Crear Cliente</h2>
     <form action="{% url 'Crear' %}" method="POST">{% csrf_token %}
         <table>

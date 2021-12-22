@@ -1,7 +1,7 @@
 {% extends "gestionClientes/base.html" %}
 {% block title %} Editar Cliente {% endblock %}
 {% block content %}
-<div>
+<div class="margentpl">
     <h2>Editar Cliente</h2>
     <form action="{% url 'Editar' %}?id={{id}}" method="POST">{% csrf_token %}
         <table>

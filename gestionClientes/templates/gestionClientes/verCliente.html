@@ -1,27 +1,32 @@
 {% extends "gestionClientes/base.html" %}
 {% block title %} Clientes {% endblock %}
 {% block content %}
-<div>
-    <h2>Clientes</h2>
-    <table>
-        <tr>
-            <th>ID</th>
-            <th>NOMBRE</th>
-            <th>DIRECCIÓN</th>
-            <th>MAIL</th>
-            <th>TELÉFONO</th>
-        </tr>
-        {% for cliente in clientes %}
-        <tr>
-            <td>{{cliente.id}}</td>
-            <td>{{cliente.nombre}}</td>
-            <td>{{cliente.direccion}}</td>
-            <td>{{cliente.email}}</td>
-            <td>{{cliente.tfno}}</td>
-            <td><a href="{% url 'Editar' %}?id={{cliente.id}}"><input type="button" value="Editar"></a></td>
-            <td><a href="eliminarCliente/{{cliente.id}}"><input type="button" value="Eliminar"></a></td>
-        </tr>
-        {% endfor %}
+<div class="margentpl">
+    <h2>Lista de Clientes</h2>
+    <br>
+    <table class="table">
+        <thead>
+            <tr>
+                <th scope="col">#</th>
+                <th scope="col">Nombre</th>
+                <th scope="col">Dirección</th>
+                <th scope="col">Mail</th>
+                <th scope="col">Teléfono</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for cliente in clientes %}
+            <tr>
+                <td>{{cliente.id}}</td>
+                <td>{{cliente.nombre}}</td>
+                <td>{{cliente.direccion}}</td>
+                <td>{{cliente.email}}</td>
+                <td>{{cliente.tfno}}</td>
+                <td><a href="{% url 'Editar' %}?id={{cliente.id}}"><input type="button" class="btn btn-primary" value="Editar"></a></td>
+                <td><a href="eliminarCliente/{{cliente.id}}"><input type="button" class="btn btn-danger" value="Eliminar"></a></td>
+            </tr>
+            {% endfor %}
+        </tbody>
     </table>
 </div>
 {% endblock %}
