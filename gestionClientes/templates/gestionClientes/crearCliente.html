@@ -1,0 +1,14 @@
+{% extends "gestionClientes/base.html" %}
+{% block title %} Crear Cliente {% endblock %}
+{% block content %}
+<div>
+    <h2>Crear Cliente</h2>
+    <form action="{% url 'Crear' %}" method="POST">{% csrf_token %}
+        <table>
+            {{formulario.as_table}}
+        </table>
+        <br>
+        <input type="submit" value="Enviar">
+    </form>
+</div>
+{% endblock %}

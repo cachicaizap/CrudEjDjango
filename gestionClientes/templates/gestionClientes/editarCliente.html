@@ -1,0 +1,14 @@
+{% extends "gestionClientes/base.html" %}
+{% block title %} Editar Cliente {% endblock %}
+{% block content %}
+<div>
+    <h2>Editar Cliente</h2>
+    <form action="{% url 'Editar' %}?id={{id}}" method="POST">{% csrf_token %}
+        <table>
+            {{formulario.as_table}}
+        </table>
+        <br>
+        <input type="submit" value="Enviar">
+    </form>
+</div>
+{% endblock %}

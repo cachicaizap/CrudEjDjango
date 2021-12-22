@@ -19,6 +19,10 @@ from gestionClientes import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('',views.listarClientes, name="Clientes"),
+    path('editarCliente',views.editarCliente, name="Editar"),
+    path('crearCliente',views.crearCliente, name="Crear"),
+    path('eliminarCliente/<codigo>',views.eliminarCliente),
     path('buscar_cliente/', views.buscar_cliente),
     path('buscar/',views.buscar),
 ]
